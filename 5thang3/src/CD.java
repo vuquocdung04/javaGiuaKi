@@ -44,12 +44,12 @@ public class CD {
 
     }
 
-    public CD(int CD, String name, String single, int count, int cost){
+    public CD(int CD, String name, String single, int count, float giaThanh){
         this.maCD = CD;
         this.tenCD = name;
         this.single = single;
         this.musicCount = count;
-        this.cost = cost;
+        this.cost = giaThanh;
     }
 
     @Override

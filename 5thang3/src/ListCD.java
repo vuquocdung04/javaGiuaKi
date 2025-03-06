@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class ListCD {
     CD[] arrCD;
     int countCD;
@@ -23,6 +26,34 @@ public class ListCD {
         arrCD[countCD++] = cd;
         System.out.println("Them Cd thanh cong");
         return true;
+    }
 
+    public int CountCD(){
+        return this.arrCD.length;
+    }
+
+    public float CostCDs(){
+        float sumCost = 0;
+        for (CD cd : arrCD) {
+            sumCost += cd.GetCost();
+        }
+        return sumCost;
+    }
+
+    public void SortCD(){
+        Arrays.sort(arrCD,0,arrCD.length, Comparator.comparingDouble(CD::GetCost).reversed());
+    }
+
+    public void SortCDName(){
+        Arrays.sort(arrCD,0,arrCD.length, Comparator.comparing(CD::GetTenCD));
+    }
+
+    public void xuatDanhSach(){
+        if(arrCD.length == 0) return;
+        else{
+            for (CD cd : arrCD) {
+                System.out.println(cd);
+            }
+        }
     }
 }
